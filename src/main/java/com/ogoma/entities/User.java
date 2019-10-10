@@ -12,6 +12,8 @@ public class User {
     private String email;
     private String firstName;
     private String lastName;
+    @ManyToOne
+    public Role role;
 
     public Long getId() {
         return id;
@@ -55,6 +57,15 @@ public class User {
 
     public User setLastName(String lastName) {
         this.lastName = lastName;
+        return this;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public User setRole(Role role) {
+        this.role = role;
         return this;
     }
 }

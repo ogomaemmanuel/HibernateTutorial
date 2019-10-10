@@ -1,5 +1,6 @@
 package com.ogoma;
 
+import com.ogoma.entities.Role;
 import com.ogoma.entities.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -14,6 +15,7 @@ public class App {
         //When not using hibernate.properties file use new Configuration().configure("hibernate.cfg.xml") ;
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(User.class);
+        configuration.addAnnotatedClass(Role.class);
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();

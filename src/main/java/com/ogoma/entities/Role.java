@@ -1,7 +1,9 @@
 package com.ogoma.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
+
 @Entity
 @Table(name = "roles")
 public class Role {
@@ -12,8 +14,11 @@ public class Role {
     public String description;
     //When mappedBy is not used, both enties will try to create a foreign key or joinTable
     //we tell this entity that User enity is going to create the foreign key using role field
-    @OneToMany(mappedBy = "role")
-    private Set<User> userSet;
+
+    //Use
+    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<User> userSet = new HashSet<>();
+
     public Long getId() {
         return id;
     }
@@ -48,5 +53,11 @@ public class Role {
     public Role setUserSet(Set<User> userSet) {
         this.userSet = userSet;
         return this;
+    }
+
+    // added to save parent child data
+    public void addUser(User user) {
+        this.userSet.add(user);
+        user.setRole(this);
     }
 }

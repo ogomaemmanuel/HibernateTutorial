@@ -7,6 +7,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.util.HashSet;
+
 /**
  * Hello world!
  */
@@ -19,18 +21,25 @@ public class App {
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
+
+
+        Role role = new Role();
+        role.setName("Tester");
+        role.setDescription("Responsible for testing applications");
         User user = new User();
         user
-                .setEmail("ogoma.emmanuel@gmail.com")
+                .setEmail("ogoma.emmanuel+10@gmail.com")
                 .setFirstName("Emmanuel")
                 .setLastName("Ogoma")
                 .setPassword("123");
+
+        role.addUser(user);
         try {
-            session.save(user);
+            session.save(role);
             transaction.commit();
-        } catch (Exception e){
+        } catch (Exception e) {
             transaction.rollback();
-        }finally {
+        } finally {
 
         }
 

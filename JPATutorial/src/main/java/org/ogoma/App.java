@@ -23,6 +23,7 @@ public class App {
         User user = new User();
         user.setFirstName("Emmanuel");
         user.setLastName("Ogoma");
+        user.setEmail("ogoma.emmanuel@gmail.com");
         user.setDob(new Date());
         entityManager.persist(user);
         entityTransaction.commit();

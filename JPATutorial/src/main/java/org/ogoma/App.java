@@ -13,11 +13,9 @@ import java.util.Date;
  */
 public class App {
     public static void main(String[] args) {
-
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jpa-tuts");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 //        Session session=entityManager.unwrap(Session.class);
-
         EntityTransaction entityTransaction = entityManager.getTransaction();
         entityTransaction.begin();
         User user = new User();

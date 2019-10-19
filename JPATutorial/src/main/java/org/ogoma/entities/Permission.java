@@ -6,7 +6,9 @@ import java.util.logging.Logger;
 
 @Entity
 @Table(name = "permissions")
+@NamedQuery(name =Permission.FIND_BY_NAME,query = "select p from Permission p where name=:name")
 public class Permission {
+    public static final String FIND_BY_NAME="Permission.findByName";
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

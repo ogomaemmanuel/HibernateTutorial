@@ -31,7 +31,8 @@ public class Auth2SecurityConfig extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        //anyone can check if his/her
+        //used for obtaining token for Password Flow
+        //Used mainly by mobile , desktop or spa   clients
         security.tokenKeyAccess("permitAll()")
                 //only authenticated users can check token validity given the tokens
                 .checkTokenAccess("isAuthenticated()");

@@ -6,9 +6,13 @@
 
   <groupId>com.ogoma</groupId>
   <artifactId>HibernateTutorial</artifactId>
-  <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>JavaEETutorial</module>
+    </modules>
 
-  <name>HibernateTutorial</name>
+    <name>HibernateTutorial</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 

@@ -13,6 +13,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.verify;
+import static org.mockito.internal.verification.VerificationModeFactory.times;
 
 @DataJpaTest
 @ContextConfiguration(classes = AuthServerApplication.class)
@@ -31,5 +34,6 @@ public class UserRepositoryUnitTest {
         chama.setPassword("1788");
         userRepository.save(chama);
         assertThat(userRepository.findAll().size(), IsEqual.equalTo(1));
+
     }
 }

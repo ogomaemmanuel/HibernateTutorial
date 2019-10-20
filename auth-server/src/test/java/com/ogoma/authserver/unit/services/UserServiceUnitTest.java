@@ -13,7 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.internal.verification.VerificationModeFactory.times;
+
 //use @RunWith in junit4
 @ExtendWith(MockitoExtension.class)
 public class UserServiceUnitTest {
@@ -26,5 +29,6 @@ public class UserServiceUnitTest {
         User user= new User();
         when(userRepository.save(any(User.class))).thenReturn(user);
         userService.save(user);
+        verify(userRepository, times(1)).save(any(User.class));
     }
 }

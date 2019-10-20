@@ -23,7 +23,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         //required for implicit flow, a user will be redirected here when they visit to login from resource server
         //Used mainly by web applications, after login the user will be redirected to the main app
-        http.authorizeRequests().antMatchers("/login").permitAll()
+        http.authorizeRequests().antMatchers("/login","/user/register").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().permitAll();;

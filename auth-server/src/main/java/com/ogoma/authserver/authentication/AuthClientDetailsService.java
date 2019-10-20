@@ -1,4 +1,4 @@
-package com.ogoma.authserver.services;
+package com.ogoma.authserver.authentication;
 
 import com.ogoma.authserver.enitities.Client;
 import com.ogoma.authserver.repositories.ClientRepository;

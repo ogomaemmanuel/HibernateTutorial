@@ -2,20 +2,36 @@ package com.ogoma.authserver.config;
 
 import com.ogoma.authserver.services.AuthClientDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
+
+import javax.annotation.Resource;
+import javax.sql.DataSource;
+
 @EnableAuthorizationServer
 @Configuration
 public class Auth2SecurityConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     AuthClientDetailsService authClientDetailsService;
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    private DataSource dataSource;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
+    @Autowired
+    @Qualifier("authenticationManagerBean")
+    private AuthenticationManager authenticationManager;
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.withClientDetails(authClientDetailsService);
@@ -28,14 +44,24 @@ public class Auth2SecurityConfig extends AuthorizationServerConfigurerAdapter {
 //                .autoApprove(true)
 //                .redirectUris("http://localhost:8082/ui/login","http://localhost:8083/ui2/login");
     }
-
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        //used for obtaining token for Password Flow
-        //Used mainly by mobile , desktop or spa   clients
+        //used so trusted resources can obtain the public key for JWT verification
         security.tokenKeyAccess("permitAll()")
                 //only authenticated users can check token validity given the tokens
                 .checkTokenAccess("isAuthenticated()");
+    }
+    @Override
+    public void configure(
+            AuthorizationServerEndpointsConfigurer endpoints)
+            throws Exception {
+        endpoints
+                .tokenStore(tokenStore())
+                .authenticationManager(authenticationManager);
+    }
+    @Bean
+    public TokenStore tokenStore() {
+        return new JdbcTokenStore(dataSource);
     }
 
 }

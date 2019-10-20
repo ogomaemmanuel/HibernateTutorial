@@ -3,6 +3,7 @@ package com.ogoma.authserver.enitities;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "users")
@@ -10,10 +11,15 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotEmpty(message = "first name is required")
     private String firstName;
+    @NotEmpty(message = "last name is required")
     private String lastName;
+    @NotEmpty(message = "email is required")
     private String email;
+    @NotEmpty(message = "Phone number is required")
     private String phone;
+    @NotEmpty(message = "Password is required")
     private String password;
 
     public Long getId() {

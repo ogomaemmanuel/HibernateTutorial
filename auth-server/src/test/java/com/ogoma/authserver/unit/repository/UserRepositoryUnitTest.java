@@ -34,6 +34,5 @@ public class UserRepositoryUnitTest {
         chama.setPassword("1788");
         userRepository.save(chama);
         assertThat(userRepository.findAll().size(), IsEqual.equalTo(1));
-
     }
 }

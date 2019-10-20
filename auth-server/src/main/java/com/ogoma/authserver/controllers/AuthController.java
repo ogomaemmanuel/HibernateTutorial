@@ -8,12 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
+
 @Controller
 public class AuthController {
     @Autowired
     private UserService userService;
     @RequestMapping(value = "user/register")
-    public ResponseEntity registerUser(@RequestBody User user){
+    public ResponseEntity registerUser(@RequestBody @Valid User user){
        User savedUser= this.userService.save(user);
        return ResponseEntity.ok(savedUser);
     }

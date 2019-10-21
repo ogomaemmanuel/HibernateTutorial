@@ -13,6 +13,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
 import javax.sql.DataSource;
@@ -34,13 +35,15 @@ public class Auth2SecurityConfig extends AuthorizationServerConfigurerAdapter {
     private AuthenticationManager authenticationManager;
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.withClientDetails(authClientDetailsService).inMemory()
+        clients
+                //.withClientDetails(authClientDetailsService)
+                .inMemory()
                 .withClient("SampleClientId")
                 .secret(passwordEncoder.encode("secret"))
                 .authorizedGrantTypes("authorization_code")
                 .scopes("user_info")
                 .autoApprove(true)
-                .redirectUris("http://localhost:8082/ui/login","http://localhost:8083/ui2/login");
+                .redirectUris("http://localhost:8082/login");
     }
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
@@ -54,12 +57,14 @@ public class Auth2SecurityConfig extends AuthorizationServerConfigurerAdapter {
             AuthorizationServerEndpointsConfigurer endpoints)
             throws Exception {
         endpoints
-                .tokenStore(tokenStore())
+                .  tokenStore(tokenStore())
                 .authenticationManager(authenticationManager);
     }
     @Bean
     public TokenStore tokenStore() {
-        return new JdbcTokenStore(dataSource);
+
+       return new InMemoryTokenStore();
+        //return new JdbcTokenStore(dataSource);
     }
 
 }

@@ -15,8 +15,8 @@ public class Auth2Config {
     public RemoteTokenServices tokenService() {
         RemoteTokenServices tokenService = new RemoteTokenServices();
         tokenService.setCheckTokenEndpointUrl(
-                "http://localhost:8094/oauth/check_token");
-        tokenService.setClientId("fooClientIdPassword");
+                "http://localhost:8094/sso-server/oauth/check_token");
+        tokenService.setClientId("SampleClientId");
         tokenService.setClientSecret("secret");
         return tokenService;
     }

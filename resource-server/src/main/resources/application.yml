@@ -1,13 +1,18 @@
 server:
   port: 8082
+  servlet:
+    context-path: /
+
+security:
+
   oauth2:
     client:
       clientId: SampleClientId
       clientSecret: secret
-      accessTokenUri: http://localhost:8081/auth/oauth/token
-      userAuthorizationUri: http://localhost:8081/auth/oauth/authorize
+      accessTokenUri: http://localhost:8094/sso-server/oauth/token
+      userAuthorizationUri: http://localhost:8094/sso-server/oauth/authorize
     resource:
-      userInfoUri: http://localhost:8081/auth/user/me
+      userInfoUri: http://localhost:8094/sso-server/user/me
 spring:
   thymeleaf:
     cache: false

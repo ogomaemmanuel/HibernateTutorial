@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="866cc7a4-b5bc-4a6c-9f4e-cae9da32162f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/services/ClientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/repository/ClientRepositoryUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/services/ClientServiceUnitTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/enitities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/enitities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/controllers/UserControllerUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/controllers/UserControllerUnitTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/repository/UserRepositoryUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/repository/UserRepositoryUnitTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -37,7 +37,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/controllers/AuthController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="236">
@@ -45,27 +45,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/AuthServerApplicationTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auth-server/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -99,7 +78,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/services/UserServiceUnitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="201">
               <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -120,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/repository/UserRepositoryUnitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="35" column="72" selection-start-line="35" selection-start-column="72" selection-end-line="35" selection-end-column="72" />
+            <state relative-caret-position="185">
+              <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,10 +109,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/config/Auth2SecurityConfig.java">
+        <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/services/ClientService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-184">
-              <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+            <state relative-caret-position="221">
+              <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,10 +121,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/config/WebSecurityConfig.java">
+        <entry file="file://$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/services/ClientServiceUnitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="25" column="56" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
+            <state relative-caret-position="-20">
+              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/repository/ClientRepositoryUnitTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="82">
+              <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/repositories/ClientRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -190,10 +193,13 @@
         <option value="$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/UserControllerUnitTest.java" />
         <option value="$PROJECT_DIR$/auth-server/src/main/resources/schema.sql" />
         <option value="$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/services/UserServiceUnitTest.java" />
-        <option value="$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/repository/UserRepositoryUnitTest.java" />
         <option value="$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/controllers/UserControllerUnitTest.java" />
         <option value="$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/enitities/User.java" />
         <option value="$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/controllers/AuthController.java" />
+        <option value="$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/services/ClientService.java" />
+        <option value="$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/services/ClientServiceUnitTest.java" />
+        <option value="$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/repository/UserRepositoryUnitTest.java" />
+        <option value="$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/repository/ClientRepositoryUnitTest.java" />
       </list>
     </option>
   </component>
@@ -286,6 +292,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="authserver" type="462c0819:PsiDirectoryNode" />
               <item name="enitities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HibernateTutorial" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HibernateTutorial" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="authserver" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HibernateTutorial" type="b2602c69:ProjectViewProjectNode" />
@@ -413,7 +429,39 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserControllerUnitTest.RegisterUserMethod">
+  <component name="RunManager" selected="JUnit.ClientRepositoryUnitTest.testSaveClient">
+    <configuration name="ClientRepositoryUnitTest.testSaveClient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="auth-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ogoma.authserver.unit.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ogoma.authserver.unit.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.ogoma.authserver.unit.repository.ClientRepositoryUnitTest" />
+      <option name="METHOD_NAME" value="testSaveClient" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientServiceUnitTest.testSaveMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="auth-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ogoma.authserver.unit.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ogoma.authserver.unit.services" />
+      <option name="MAIN_CLASS_NAME" value="com.ogoma.authserver.unit.services.ClientServiceUnitTest" />
+      <option name="METHOD_NAME" value="testSaveMethod" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserControllerUnitTest.RegisterUserMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="auth-server" />
       <extension name="coverage">
@@ -462,25 +510,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="[engine:junit-jupiter]/[class:com.ogoma.authserver.unit.UserControllerUnitTest]" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="auth-server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ogoma.authserver.unit.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ogoma.authserver.unit" />
-      <option name="MAIN_CLASS_NAME" value="com.ogoma.authserver.unit.UserControllerUnitTest" />
-      <option name="METHOD_NAME" value="RegisterUserMethod" />
-      <option name="TEST_OBJECT" value="uniqueId" />
-      <uniqueIds>
-        <uniqueId value="[engine:junit-jupiter]/[class:com.ogoma.authserver.unit.UserControllerUnitTest]" />
-      </uniqueIds>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AuthServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="auth-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ogoma.authserver.AuthServerApplication" />
@@ -490,10 +519,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ClientRepositoryUnitTest.testSaveClient" />
+        <item itemvalue="JUnit.ClientServiceUnitTest.testSaveMethod" />
         <item itemvalue="JUnit.UserControllerUnitTest.RegisterUserMethod" />
         <item itemvalue="JUnit.UserServiceUnitTest.testSaveUserMethod" />
         <item itemvalue="JUnit.UserRepositoryUnitTest.testSaveUser" />
-        <item itemvalue="JUnit.[engine:junit-jupiter]/[class:com.ogoma.authserver.unit.UserControllerUnitTest]" />
       </list>
     </recent_temporary>
   </component>
@@ -509,26 +539,11 @@
       <updated>1571573683165</updated>
       <workItem from="1571573687322" duration="526000" />
       <workItem from="1571574379192" duration="621000" />
-      <workItem from="1571576109868" duration="21110000" />
+      <workItem from="1571576109868" duration="24246000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserControllerUnitTest_RegisterUserMethod - 2019.10.20 at 23h 19m 12s.xml">
-      <configuration name="UserControllerUnitTest.RegisterUserMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserControllerUnitTest - 2019.10.20 at 23h 20m 21s.xml">
-      <configuration name="UserControllerUnitTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserServiceUnitTest_testSaveUserMethod - 2019.10.20 at 23h 29m 50s.xml">
-      <configuration name="UserServiceUnitTest.testSaveUserMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserServiceUnitTest_testSaveUserMethod - 2019.10.20 at 23h 30m 29s.xml">
-      <configuration name="UserServiceUnitTest.testSaveUserMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserServiceUnitTest_testSaveUserMethod - 2019.10.20 at 23h 36m 03s.xml">
-      <configuration name="UserServiceUnitTest.testSaveUserMethod" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UserRepositoryUnitTest_testSaveUser - 2019.10.20 at 23h 45m 35s.xml">
       <configuration name="UserRepositoryUnitTest.testSaveUser" configurationId="JUnit" />
     </history-entry>
@@ -544,9 +559,24 @@
     <history-entry file="UserServiceUnitTest_testSaveUserMethod - 2019.10.20 at 23h 52m 17s.xml">
       <configuration name="UserServiceUnitTest.testSaveUserMethod" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UserControllerUnitTest_RegisterUserMethod - 2019.10.20 at 23h 59m 05s.xml">
+      <configuration name="UserControllerUnitTest.RegisterUserMethod" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientServiceUnitTest_testSaveMethod - 2019.10.21 at 10h 06m 41s.xml">
+      <configuration name="ClientServiceUnitTest.testSaveMethod" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientServiceUnitTest_testSaveMethod - 2019.10.21 at 10h 07m 52s.xml">
+      <configuration name="ClientServiceUnitTest.testSaveMethod" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientServiceUnitTest_testSaveMethod - 2019.10.21 at 10h 08m 26s.xml">
+      <configuration name="ClientServiceUnitTest.testSaveMethod" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientRepositoryUnitTest_testSaveClient - 2019.10.21 at 10h 22m 43s.xml">
+      <configuration name="ClientRepositoryUnitTest.testSaveClient" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22257000" />
+    <option name="totallyTimeSpent" value="25393000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -566,7 +596,7 @@
       <window_info anchor="bottom" id="Java Enterprise" weight="0.32956153" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.5473833" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.5473833" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -575,7 +605,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="YouTrack" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32956153" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32956153" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Bean Validation" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -645,16 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="31" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/repositories/ClientRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -775,36 +795,6 @@
     <entry file="file://$PROJECT_DIR$/auth-server/src/main/resources/schema.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/services/UserServiceUnitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/repository/UserRepositoryUnitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="35" column="72" selection-start-line="35" selection-start-column="72" selection-end-line="35" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/controllers/UserControllerUnitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/enitities/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -821,6 +811,76 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
           <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/controllers/UserControllerUnitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/repositories/ClientRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/main/java/com/ogoma/authserver/services/ClientService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/services/UserServiceUnitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/services/ClientServiceUnitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/repository/UserRepositoryUnitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-server/src/test/java/com/ogoma/authserver/unit/repository/ClientRepositoryUnitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

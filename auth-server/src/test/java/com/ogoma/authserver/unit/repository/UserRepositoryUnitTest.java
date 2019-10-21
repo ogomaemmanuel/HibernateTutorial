@@ -27,12 +27,12 @@ public class UserRepositoryUnitTest {
     @Test
     public void testSaveUser(){
         assertThat(userRepository.findAll().size(), IsEqual.equalTo(0));
-        User chama = new User();
-        chama.setEmail("test@gmail.com");
-        chama.setFirstName("Test accountNO");
-        chama.setLastName("test setDescription");
-        chama.setPassword("1788");
-        userRepository.save(chama);
+        User user = new User();
+        user.setEmail("test@gmail.com");
+        user.setFirstName("Test accountNO");
+        user.setLastName("test setDescription");
+        user.setPassword("1788");
+        userRepository.save(user);
         assertThat(userRepository.findAll().size(), IsEqual.equalTo(1));
     }
 }

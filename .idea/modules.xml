@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HibernateTutorial.iml" filepath="$PROJECT_DIR$/HibernateTutorial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JPATutorial/JPATutorial.iml" filepath="$PROJECT_DIR$/JPATutorial/JPATutorial.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-server/auth-server.iml" filepath="$PROJECT_DIR$/auth-server/auth-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/resource-server/resource-server.iml" filepath="$PROJECT_DIR$/resource-server/resource-server.iml" />
     </modules>
   </component>
 </project>

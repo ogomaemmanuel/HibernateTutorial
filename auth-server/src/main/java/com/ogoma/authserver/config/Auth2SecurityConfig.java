@@ -33,7 +33,7 @@ public class Auth2SecurityConfig extends AuthorizationServerConfigurerAdapter {
     private AuthenticationManager authenticationManager;
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.withClientDetails(authClientDetailsService).and().inMemory()
+        clients.withClientDetails(authClientDetailsService).inMemory()
                 .withClient("SampleClientId")
                 .secret(passwordEncoder.encode("secret"))
                 .authorizedGrantTypes("authorization_code")

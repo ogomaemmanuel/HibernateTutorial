@@ -30,6 +30,7 @@ public class Auth2SecurityConfig extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
     @Qualifier("authenticationManagerBean")
+    //In order to use the “password” grant type we need to wire in and use the AuthenticationManager bean
     private AuthenticationManager authenticationManager;
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {

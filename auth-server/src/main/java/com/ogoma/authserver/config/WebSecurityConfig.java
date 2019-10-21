@@ -43,7 +43,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     //This is the default bean that handles authentication
-    //It must be created since we use it auth2security  config
+    //It must be created since we use it auth2security  config when using password grant
+    //In order to use the “password” grant type we need to wire in and use the AuthenticationManager bean
     @Override
     @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {

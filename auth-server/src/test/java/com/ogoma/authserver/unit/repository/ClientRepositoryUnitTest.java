@@ -32,6 +32,6 @@ public class ClientRepositoryUnitTest {
         client.setRedirectUri("https://redirect.com");
         client.setAuthorities("test");
         Client client1 = clientRepository.save(client);
-
+        System.out.println(client1.getId());
     }
 }

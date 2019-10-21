@@ -1,5 +1,7 @@
 package com.ogoma.authserver.config;
 
+import com.ogoma.authserver.authentication.AppUserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -7,11 +9,21 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    @Autowired
+    private AppUserDetailsService appUserDetailsService;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        super.configure(auth);
+        auth.userDetailsService(appUserDetailsService).and()
+                .inMemoryAuthentication().withUser("user")
+                .password(passwordEncoder.encode("password"))
+                .roles("USER");
     }
 
     @Override
@@ -23,16 +35,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         //required for implicit flow, a user will be redirected here when they visit to login from resource server
         //Used mainly by web applications, after login the user will be redirected to the main app
-        http.authorizeRequests().antMatchers("/login","/user/register").permitAll()
+        http.authorizeRequests().antMatchers("/login", "/user/register").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().permitAll();;
+                .formLogin().permitAll();
+        ;
     }
+
     //This is the default bean that handles authentication
     //It must be created since we use it auth2security  config
     @Override
     @Bean
-    public  AuthenticationManager authenticationManagerBean() throws Exception {
+    public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManager();
     }
+
+
 }

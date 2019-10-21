@@ -33,15 +33,13 @@ public class Auth2SecurityConfig extends AuthorizationServerConfigurerAdapter {
     private AuthenticationManager authenticationManager;
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.withClientDetails(authClientDetailsService);
-
-//        clients.inMemory()
-//                .withClient("SampleClientId")
-//                .secret(passwordEncoder.encode("secret"))
-//                .authorizedGrantTypes("authorization_code")
-//                .scopes("user_info")
-//                .autoApprove(true)
-//                .redirectUris("http://localhost:8082/ui/login","http://localhost:8083/ui2/login");
+        clients.withClientDetails(authClientDetailsService).and().inMemory()
+                .withClient("SampleClientId")
+                .secret(passwordEncoder.encode("secret"))
+                .authorizedGrantTypes("authorization_code")
+                .scopes("user_info")
+                .autoApprove(true)
+                .redirectUris("http://localhost:8082/ui/login","http://localhost:8083/ui2/login");
     }
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {

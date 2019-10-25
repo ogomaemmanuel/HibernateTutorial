@@ -1,5 +1,6 @@
 package com.ogoma.resourceserver.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -14,6 +15,10 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
 //used when the application expects access tokens to validate with the server
 //@EnableResourceServer
 public class Auth2Config   {
+    @Value("${security.oauth2.client.clientSecret}")
+     private String clientSecret;
+     @Value("${security.oauth2.client.clientId}")
+     private String clientId;
 
 
 
@@ -37,8 +42,8 @@ public class Auth2Config   {
         RemoteTokenServices tokenService = new RemoteTokenServices();
         tokenService.setCheckTokenEndpointUrl(
                 "http://localhost:8094/sso-server/oauth/check_token");
-        tokenService.setClientId("SampleClientId");
-        tokenService.setClientSecret("secret");
+        tokenService.setClientId(clientId);
+        tokenService.setClientSecret(clientSecret);
         return tokenService;
     }
 }

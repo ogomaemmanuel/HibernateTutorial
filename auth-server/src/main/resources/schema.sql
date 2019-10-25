@@ -12,7 +12,14 @@ create table IF NOT EXISTS oauth_client_details
     additional_information  VARCHAR(4096),
     autoapprove             tinyint
 );
-
+create table if not exists oauth_approvals (
+                                 userId VARCHAR(256),
+                                 clientId VARCHAR(256),
+                                 scope VARCHAR(256),
+                                 status VARCHAR(10),
+                                 expiresAt TIMESTAMP NULL DEFAULT NULL,
+                                 lastModifiedAt TIMESTAMP NULL DEFAULT NULL
+);
 create table IF NOT EXISTS oauth_client_token
 (
     token_id          VARCHAR(255),

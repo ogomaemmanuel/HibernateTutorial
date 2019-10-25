@@ -11,8 +11,11 @@ security:
       clientSecret: secret
       accessTokenUri: http://localhost:8094/sso-server/oauth/token
       userAuthorizationUri: http://localhost:8094/sso-server/oauth/authorize
+      use-current-uri: true
+      scope: user_info
     resource:
       userInfoUri: http://localhost:8094/sso-server/user/me
+
 spring:
   thymeleaf:
     cache: false

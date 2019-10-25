@@ -42,7 +42,7 @@ public class Auth2SecurityConfig extends AuthorizationServerConfigurerAdapter {
     //https://alexbilbie.com/guide-to-oauth-2-grants/
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients
-                .withClientDetails(authClientDetailsService);
+                .jdbc(dataSource);
 //                .inMemory()
 //                .withClient("SampleClientId")
 //                .secret(passwordEncoder.encode("secret"))
@@ -64,7 +64,7 @@ public class Auth2SecurityConfig extends AuthorizationServerConfigurerAdapter {
             AuthorizationServerEndpointsConfigurer endpoints)
             throws Exception {
                   endpoints
-                . tokenStore(tokenStore())
+                .tokenStore(tokenStore())
                 .approvalStore(approvalStore())
                 .userDetailsService(appUserDetailsService)
                 .authenticationManager(authenticationManager);

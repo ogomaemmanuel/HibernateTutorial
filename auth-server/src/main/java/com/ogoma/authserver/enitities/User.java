@@ -77,9 +77,11 @@ public class User {
     }
 
     @PrePersist
-    public void encryptPassword(){
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        bCryptPasswordEncoder.encode(this.password);
+    public void encryptPassword() {
+        if (this.password != null) {
+            BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+            this.password = bCryptPasswordEncoder.encode(this.password);
+        }
     }
 }
 

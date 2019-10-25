@@ -42,12 +42,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //Disable basic authentication that is being used by spring by default
 
     }
-//    @Bean
-//    @Primary
-//    public FilterRegistrationBean<OAuth2ClientContextFilter> oauth2ClientFilterRegistration(OAuth2ClientContextFilter filter) {
-//        FilterRegistrationBean<OAuth2ClientContextFilter> registration = new FilterRegistrationBean<OAuth2ClientContextFilter>();
-//        registration.setFilter(filter);
-//        registration.setOrder(-100);
-//        return registration;
-//    }
+
 }

@@ -7,7 +7,7 @@ security:
 
   oauth2:
     client:
-      clientId: SampleClientId
+      clientId: 75ed9571-541d-4829-8119-37ecf6ff9218
       clientSecret: secret
       accessTokenUri: http://localhost:8094/sso-server/oauth/token
       userAuthorizationUri: http://localhost:8094/sso-server/oauth/authorize

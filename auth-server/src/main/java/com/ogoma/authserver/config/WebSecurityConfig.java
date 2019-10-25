@@ -2,6 +2,7 @@ package com.ogoma.authserver.config;
 
 import com.ogoma.authserver.authentication.AppUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -10,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.RequestMatcher;
 
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -20,10 +22,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     PasswordEncoder passwordEncoder;
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(appUserDetailsService).and()
-                .inMemoryAuthentication().withUser("user")
-                .password(passwordEncoder.encode("password"))
-                .roles("USER");
+        auth.userDetailsService(appUserDetailsService);
+
+                //.and()
+               // .inMemoryAuthentication().withUser("user")
+               // .password(passwordEncoder.encode("password"))
+                //.roles("USER");
     }
 
     @Override
@@ -37,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         //Used mainly by web applications, after login the user will be redirected to the main app
         http.authorizeRequests().antMatchers("/login", "/oauth/authorize").permitAll()
                 .anyRequest().authenticated()
-                .and()
+                .and().csrf().disable()
                 .formLogin().permitAll();
         ;
     }

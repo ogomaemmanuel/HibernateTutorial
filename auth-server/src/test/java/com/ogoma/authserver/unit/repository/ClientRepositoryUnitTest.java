@@ -30,7 +30,7 @@ public class ClientRepositoryUnitTest {
         client.setAccessTokenValidity(100);
         client.setScope("read");
         client.setRedirectUri("https://redirect.com");
-        client.setAuthorities("test");
+        client.setAuthorizedGrantTypes("test");
         Client client1 = clientRepository.save(client);
         System.out.println(client1.getId());
     }

@@ -2,6 +2,9 @@ package com.ogoma.resourceserver.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.security.Principal;
 
 @Controller
 public class HomeController {
@@ -10,8 +13,10 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping(value = "/login")
-    public String ssoLogin(){
-        return "login";
+    @RequestMapping(value = "/user")
+    @ResponseBody
+    public Principal ssoLogin(Principal  principal){
+        //System.out.println("Authentiocated principal"+principal.toString());
+        return principal;
     }
 }

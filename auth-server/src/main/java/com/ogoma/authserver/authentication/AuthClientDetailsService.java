@@ -9,10 +9,9 @@ import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.ClientRegistrationException;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Component
 public class AuthClientDetailsService implements ClientDetailsService {
@@ -33,12 +32,15 @@ public class AuthClientDetailsService implements ClientDetailsService {
 
             @Override
             public Set<String> getResourceIds() {
-                return null;
+                if(client.getResourceIds()!=null) {
+                    return Stream.of(client.getResourceIds().split(",")).collect(Collectors.toSet());
+                }
+                return  null;
             }
 
             @Override
             public boolean isSecretRequired() {
-                return true;
+                return this.getClientSecret()!=null;
             }
 
             @Override
@@ -54,13 +56,19 @@ public class AuthClientDetailsService implements ClientDetailsService {
             @Override
             public Set<String> getScope() {
                 Set scopes = new HashSet<>();
-                scopes.add(client.getScope());
+                if (client.getScope() != null) {
+                    scopes.addAll(Arrays.asList(client.getScope().split(",")));
+                }
                 return scopes;
             }
 
             @Override
             public Set<String> getAuthorizedGrantTypes() {
-                return null;
+                Set grantTypes = new HashSet();
+                if (client.getAuthorizedGrantTypes() != null) {
+                    grantTypes.addAll(Arrays.asList(client.getAuthorizedGrantTypes().split(",")));
+                }
+                return grantTypes;
             }
 
             @Override
@@ -77,22 +85,25 @@ public class AuthClientDetailsService implements ClientDetailsService {
 
             @Override
             public Integer getAccessTokenValiditySeconds() {
-                return null;
+                return client.getAccessTokenValidity();
             }
 
             @Override
             public Integer getRefreshTokenValiditySeconds() {
-                return null;
+                return client.getAccessTokenValidity();
+
             }
 
             @Override
             public boolean isAutoApprove(String s) {
-                return false;
+                return Boolean.valueOf(s);
             }
 
             @Override
             public Map<String, Object> getAdditionalInformation() {
-                return null;
+                HashMap hashMap = new HashMap();
+                hashMap.put(client.getAdditionalInformation(), client.getAdditionalInformation());
+                return hashMap;
             }
         };
     }

@@ -1,5 +1,6 @@
 package com.ogoma.authserver.config;
 
+import com.ogoma.authserver.authentication.AppUserDetailsService;
 import com.ogoma.authserver.authentication.AuthClientDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,6 +13,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.approval.ApprovalStore;
+import org.springframework.security.oauth2.provider.approval.JdbcApprovalStore;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
@@ -25,7 +28,8 @@ public class Auth2SecurityConfig extends AuthorizationServerConfigurerAdapter {
     AuthClientDetailsService authClientDetailsService;
     @Autowired
     private DataSource dataSource;
-
+    @Autowired
+    private AppUserDetailsService appUserDetailsService;
     @Autowired
     PasswordEncoder passwordEncoder;
 
@@ -34,16 +38,19 @@ public class Auth2SecurityConfig extends AuthorizationServerConfigurerAdapter {
     //In order to use the “password” grant type we need to wire in and use the AuthenticationManager bean
     private AuthenticationManager authenticationManager;
     @Override
+
+    //https://alexbilbie.com/guide-to-oauth-2-grants/
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients
-                //.withClientDetails(authClientDetailsService)
-                .inMemory()
-                .withClient("SampleClientId")
-                .secret(passwordEncoder.encode("secret"))
-                .authorizedGrantTypes("authorization_code")
-                .scopes("user_info")
-                .autoApprove(true)
-                .redirectUris("http://localhost:8082/login");
+                .withClientDetails(authClientDetailsService);
+//                .inMemory()
+//                .withClient("SampleClientId")
+//                .secret(passwordEncoder.encode("secret"))
+//                .authorizedGrantTypes("authorization_code","password","client_credentials","refresh_token")
+//                .scopes("user_info")
+//                .autoApprove(true)
+//                .redirectUris("http://localhost:8082/login");
+
     }
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
@@ -56,15 +63,22 @@ public class Auth2SecurityConfig extends AuthorizationServerConfigurerAdapter {
     public void configure(
             AuthorizationServerEndpointsConfigurer endpoints)
             throws Exception {
-        endpoints
-                .  tokenStore(tokenStore())
+                  endpoints
+                . tokenStore(tokenStore())
+                .approvalStore(approvalStore())
+                .userDetailsService(appUserDetailsService)
                 .authenticationManager(authenticationManager);
     }
     @Bean
     public TokenStore tokenStore() {
 
-       return new InMemoryTokenStore();
+       return new JdbcTokenStore(dataSource);
         //return new JdbcTokenStore(dataSource);
+    }
+
+    @Bean
+    public ApprovalStore approvalStore(){
+        return new JdbcApprovalStore(dataSource);
     }
 
 }

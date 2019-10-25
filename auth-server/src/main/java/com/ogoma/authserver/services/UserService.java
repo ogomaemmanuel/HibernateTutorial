@@ -18,4 +18,8 @@ public class UserService {
         user=  this.userRepository.save(user);
         return user;
     }
+
+    public  Long count(){
+        return userRepository.count();
+    }
 }
